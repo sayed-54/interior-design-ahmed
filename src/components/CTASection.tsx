@@ -1,11 +1,20 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { cn } from '@/lib/utils'
+import ReservationModal from '@/components/ReservationModal'
+import { getProjectCategories } from '@/sanity/queries'
 
 export default function CTASection() {
   const { t, isRTL } = useLanguage()
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    getProjectCategories().then(setCategories)
+  }, [])
 
   return (
     <section className="py-40 bg-accent text-primary relative overflow-hidden">
@@ -29,12 +38,19 @@ export default function CTASection() {
               boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
             }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => setIsModalOpen(true)}
             className="bg-primary text-white px-20 py-7 text-xs uppercase tracking-[0.5em] font-sans hover:bg-black transition-all rounded-full"
           >
             {t('cta.button')}
           </motion.button>
         </motion.div>
       </div>
+
+      <ReservationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        categories={categories}
+      />
 
       {/* Decorative Circles */}
       <div className={cn(

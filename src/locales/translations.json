@@ -5,8 +5,7 @@
             "projects": "Projects",
             "services": "Services",
             "about": "About",
-            "contact": "Contact",
-            "talk": "Let's Talk"
+            "contact": "Contact"
         },
         "hero": {
             "discover": "Discover More",
@@ -20,9 +19,11 @@
             "architecture_quote": "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
         },
         "projects": {
-            "title": "Featured Projects"
+            "title": "Featured Projects",
+            "viewProject": "View Project"
         },
         "services": {
+            "title": "Our Services",
             "conceptual": {
                 "title": "Conceptual Design",
                 "desc": "Transforming ideas into coherent visual narratives."
@@ -41,12 +42,71 @@
             "button": "Start Your Project"
         },
         "footer": {
-            "connect": "Let's Connect",
             "quickLinks": "Quick Links",
             "services": "Services",
-            "copyright": "All rights reserved",
+            "connect": "Connect",
+            "copyright": "All rights reserved.",
             "privacy": "Privacy Policy",
-            "terms": "Terms of Service"
+            "terms": "Terms of Use"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "subtitle": "Let's collaborate on your next architectural narrative",
+            "name": "Full Name",
+            "email": "Email Address",
+            "phone": "Phone Number",
+            "message": "Message",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "Failed to send message. Please try again.",
+            "required": "This field is required",
+            "invalidEmail": "Please enter a valid email address"
+        },
+        "reservation": {
+            "title": "Start Your Project",
+            "subtitle": "Tell us about your dream space and let's make it a reality.",
+            "category": "Interest Category",
+            "description": "Project Description",
+            "submit": "Book Consultation",
+            "success": "Booking request sent! We'll reach out soon.",
+            "selectCategory": "Select a category"
+        },
+        "privacyPolicy": {
+            "title": "Privacy Policy",
+            "lastUpdated": "Last Updated: February 2026",
+            "introduction": {
+                "title": "Introduction",
+                "content": "At Ahmed Samy Interior Design, we respect your privacy and are committed to protecting your personal data. This policy explains how we handle your information when you visit our website or use our services."
+            },
+            "dataCollection": {
+                "title": "Data We Collect",
+                "content": "We collect information you provide directly through our contact and reservation forms, including your name, email address, phone number, and project details."
+            },
+            "dataUsage": {
+                "title": "How We Use Your Data",
+                "content": "Your data is used solely to respond to your inquiries, manage your project reservations, and provide our architectural and design services."
+            },
+            "dataProtection": {
+                "title": "Data Protection",
+                "content": "We implement industry-standard security measures to ensure your personal information remains confidential and secure from unauthorized access."
+            }
+        },
+        "termsOfUse": {
+            "title": "Terms of Use",
+            "lastUpdated": "Last Updated: February 2026",
+            "agreement": {
+                "title": "Agreement to Terms",
+                "content": "By accessing our website, you agree to be bound by these terms. Our architectural designs and artistic content are the intellectual property of Ahmed Samy Interior Design."
+            },
+            "services": {
+                "title": "Service Engagement",
+                "content": "Direct consultation and design work are subject to individual project agreements. The website serves as a portfolio and preliminary greeting for potential collaborations."
+            },
+            "limitation": {
+                "title": "Limitation of Liability",
+                "content": "While we strive for excellence, we are not liable for any indirect or consequential damages arising from the use of the information provided on this portfolio."
+            }
         }
     },
     "ar": {
@@ -54,49 +114,96 @@
             "home": "الرئيسية",
             "projects": "المشاريع",
             "services": "الخدمات",
-            "about": "من نحن",
-            "contact": "اتصل بنا",
-            "talk": "تحدث معنا"
+            "about": "عنا",
+            "contact": "تواصل معنا"
         },
         "hero": {
-            "discover": "اكتشف المزيد",
-            "headline": "التميز المعماري",
-            "subheadline": "نهج مدروس لتصميم داخلي فاخر",
-            "button": "عرض المشاريع"
+            "headline": "التميز المعماري في كل تفصيل",
+            "subheadline": "تصميم بيئات غامرة تمزج بين الدقة المعمارية والدفء الإنساني.",
+            "button": "استكشف أعمالنا"
         },
         "about": {
-            "since": "تأسست في عام",
+            "since": "منذ",
             "philosophy": "فلسفتنا",
-            "architecture_quote": "العمارة هي اللعبة المتقنة والصحيحة والرائعة للكتل المجتمعة تحت الضوء."
+            "architecture_quote": "العمارة هي فن كيف نعيش في الفضاء."
         },
         "projects": {
-            "title": "مشاريع مميزة"
+            "title": "المشاريع المختارة",
+            "viewProject": "عرض المشروع"
         },
         "services": {
-            "conceptual": {
-                "title": "التصميم المفاهيمي",
-                "desc": "تحويل الأفكار إلى روايات بصرية متماسكة."
-            },
-            "planning": {
-                "title": "التخطيط المكاني",
-                "desc": "تحسين التدفقات والوظائف في العمارة."
-            },
-            "materials": {
-                "title": "اختيار المواد",
-                "desc": "الحصول على أرقى المواد والتشطيبات."
-            }
+            "title": "خدماتنا"
         },
         "cta": {
             "title": "هل أنت مستعد لتحويل ملاذك؟",
             "button": "ابدأ مشروعك"
         },
         "footer": {
-            "connect": "لنتواصل",
             "quickLinks": "روابط سريعة",
             "services": "الخدمات",
-            "copyright": "جميع الحقوق محفوظة",
+            "connect": "تواصل معنا",
+            "copyright": "جميع الحقوق محفوظة.",
             "privacy": "سياسة الخصوصية",
-            "terms": "شروط الخدمة"
+            "terms": "شروط الاستخدام"
+        },
+        "contact": {
+            "title": "تواصل معنا",
+            "subtitle": "لنبدأ العمل معاً على مشروعك القادم",
+            "name": "الاسم الكامل",
+            "email": "البريد الإلكتروني",
+            "phone": "رقم الهاتف",
+            "message": "الرسالة",
+            "submit": "إرسال الرسالة",
+            "sending": "جاري الإرسال...",
+            "success": "تم إرسال رسالتك بنجاح!",
+            "error": "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
+            "required": "هذا الحقل مطلوب",
+            "invalidEmail": "يرجى إدخال بريد إلكتروني صحيح"
+        },
+        "reservation": {
+            "title": "ابدأ مشروعك",
+            "subtitle": "أخبرنا عن مساحة أحلامك ودعنا نحولها إلى حقيقة.",
+            "category": "فئة الاهتمام",
+            "description": "وصف المشروع",
+            "submit": "احجز استشارة",
+            "success": "تم إرسال طلب الحجز! سنتواصل معك قريباً.",
+            "selectCategory": "اختر فئة"
+        },
+        "privacyPolicy": {
+            "title": "سياسة الخصوصية",
+            "lastUpdated": "آخر تحديث: فبراير 2026",
+            "introduction": {
+                "title": "مقدمة",
+                "content": "في مكتب أحمد سامي للتصميم الداخلي، نحن نحترم خصوصيتك وملتزمون بحماية بياناتك الشخصية. توضح هذه السياسة كيفية تعاملنا مع معلوماتك عند زيارة موقعنا أو استخدام خدماتنا."
+            },
+            "dataCollection": {
+                "title": "البيانات التي نجمعها",
+                "content": "نحن نجمع المعلومات التي تقدمها مباشرة من خلال نماذج الاتصال والحجز، بما في ذلك اسمك وبريدك الإلكتروني ورقم هاتفك وتفاصيل المشروع."
+            },
+            "dataUsage": {
+                "title": "كيفية استخدام بياناتك",
+                "content": "يتم استخدام بياناتك فقط للرد على استفساراتك، وإدارة حجوزات مشروعك، وتقديم خدماتنا المعمارية والتصميمية."
+            },
+            "dataProtection": {
+                "title": "حماية البيانات",
+                "content": "نحن نطبق تدابير أمنية قياسية لضمان بقاء معلوماتك الشخصية سرية وآمنة من الوصول غير المصرح به."
+            }
+        },
+        "termsOfUse": {
+            "title": "شروط الاستخدام",
+            "lastUpdated": "آخر تحديث: فبراير 2026",
+            "agreement": {
+                "title": "الموافقة على الشروط",
+                "content": "من خلال الدخول إلى موقعنا، فإنك توافق على الالتزام بهذه الشروط. تصاميمنا المعمارية ومحتوانا الفني هي ملكية فكرية لمكتب أحمد سامي للتصميم الداخلي."
+            },
+            "services": {
+                "title": "التعاقد على الخدمات",
+                "content": "تخضع الاستشارات المباشرة وأعمال التصميم لاتفاقيات مشاريع فردية. يعمل الموقع كمعرض أعمال ووسيلة تواصل أولية للتعاون المحتمل."
+            },
+            "limitation": {
+                "title": "حدود المسؤولية",
+                "content": "بينما نسعى جاهدين للتميز، فإننا لسنا مسؤولين عن أي أضرار غير مباشرة ناتجة عن استخدام المعلومات المقدمة في معرض الأعمال هذا."
+            }
         }
     }
 }

@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { getSettings } from "@/sanity/queries";
+import { baseUrl } from "@/sanity/env";
 import { LanguageProvider } from "@/context/LanguageContext";
 import GrainOverlay from "@/components/GrainOverlay";
+import DynamicTitleHandler from "@/components/DynamicTitleHandler";
+import { getLocalizedValue } from "@/utils/i18n";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -17,9 +20,67 @@ const playfair = Playfair_Display({
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
+  const title = getLocalizedValue(settings?.siteTitle, 'en') || "Ahmed Samy Interior Design";
+  const description = getLocalizedValue(settings?.seoDescription, 'en') || "Ahmed Samy Interior Design - Premium Architectural & Luxury Interior Design Studio. Transforming spaces into immersive environments.";
+  const keywords = settings?.seoKeywords || "Interior Design, Architecture, Luxury Design, Ahmed Samy, Modern Interior, تصميم داخلي, عمارة, دهانات, تشطيبات, ديكور داخلي, تصميم مودرن, مهندس ديكور";
+  const ogImageUrl = settings?.ogImage || '/og-image.jpg';
+  
   return {
-    title: settings?.siteTitle || "Luxury Interior Design",
-    description: "Premium Interior Design Studio",
+    title: {
+      default: title,
+      template: `%s | ${title}`
+    },
+    description,
+    keywords: keywords.split(',').map((k: string) => k.trim()),
+    authors: [{ name: "Ahmed Samy" }],
+    creator: "Ahmed Samy",
+    publisher: "Ahmed Samy Interior Designer",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'en-US': '/en',
+        'ar-EG': '/ar',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: baseUrl,
+      siteName: title,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      creator: '@ahmedsamy',
+      images: [ogImageUrl],
+    },
   };
 }
 
@@ -47,6 +108,7 @@ export default async function RootLayout({
         } as React.CSSProperties}
       >
         <LanguageProvider>
+          <DynamicTitleHandler siteTitle={settings?.siteTitle} />
           <GrainOverlay />
           {children}
         </LanguageProvider>

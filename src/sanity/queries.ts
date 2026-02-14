@@ -14,7 +14,10 @@ export async function getSettings() {
       overlayGradient,
       navigation,
       "heroBg": heroBackgroundImage.asset->url,
-      "footerBg": footerBackgroundImage.asset->url
+      "footerBg": footerBackgroundImage.asset->url,
+      seoDescription,
+      seoKeywords,
+      "ogImage": ogImage.asset->url
     }`
   )
 }
@@ -75,6 +78,7 @@ export async function getFooter() {
       socialLinks,
       email,
       phone,
+      location,
       copyrightText
     }`
   )
@@ -93,4 +97,13 @@ export async function getProjectBySlug(slug: string) {
     }`,
     { slug }
   )
+}
+
+export async function getProjectCategories() {
+  const query = groq`*[_type == "project"].category`
+  return client.fetch(query)
+}
+
+export async function getLegalData() {
+  return client.fetch(groq`*[_type == "legal"][0]`)
 }

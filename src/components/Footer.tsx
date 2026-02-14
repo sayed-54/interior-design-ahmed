@@ -83,7 +83,7 @@ export default function Footer({ footer, settings }: FooterProps) {
           </div>
 
           {/* Services */}
-          <div className={cn(isRTL ? "text-right" : "text-left")}>
+          {/* <div className={cn(isRTL ? "text-right" : "text-left")}>
             <h4 className="text-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-12">{t('footer.services')}</h4>
             <ul className="space-y-5">
               {footer?.servicesLinks?.map((link: any) => (
@@ -94,7 +94,7 @@ export default function Footer({ footer, settings }: FooterProps) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact */}
           <div className={cn("space-y-10", isRTL ? "text-right" : "text-left")}>
@@ -119,7 +119,9 @@ export default function Footer({ footer, settings }: FooterProps) {
                 isRTL && "flex-row-reverse"
               )}>
                 <MapPin size={18} className="text-accent/30" />
-                <span className="text-sm font-light tracking-wide">{isRTL ? "الرياض | لندن | ميلانو" : "Riyadh | London | Milan"}</span>
+                <span className="text-sm font-light tracking-wide">
+                  {getLocalizedValue(footer?.location, language) || (isRTL ? "الرياض | لندن | ميلانو" : "Riyadh | London | Milan")}
+                </span>
               </div>
             </div>
           </div>

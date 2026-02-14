@@ -58,6 +58,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'location',
+      title: 'Location',
+      type: 'localizedString',
+    }),
+    defineField({
       name: 'copyrightText',
       title: 'Copyright Text',
       type: 'localizedString',

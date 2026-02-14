@@ -66,7 +66,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
           isRTL ? "justify-start" : "justify-start"
         )}>
           <Link 
-            href="/#contact"
+            href="/contact"
             className={cn(
               "bg-accent text-primary px-12 py-5 font-sans text-xs uppercase tracking-widest font-bold hover:bg-white transition-all shadow-xl shadow-accent/10 whitespace-nowrap inline-block",
               language === 'ar' && "font-arabic tracking-normal"

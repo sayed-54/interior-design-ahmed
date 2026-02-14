@@ -77,6 +77,24 @@ export default defineType({
       type: 'image',
       options: { hotspot: true },
     }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Description',
+      type: 'localizedString',
+      description: 'The meta description for search engines.',
+    }),
+    defineField({
+      name: 'seoKeywords',
+      title: 'SEO Keywords',
+      type: 'string',
+      description: 'Comma-separated keywords for SEO.',
+    }),
+    defineField({
+      name: 'ogImage',
+      title: 'Social Share Image (OG)',
+      type: 'image',
+      description: 'Image displayed when sharing the site on social media (1200x630px recommended).',
+    }),
   ],
   preview: {
     select: {

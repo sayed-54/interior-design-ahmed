@@ -104,6 +104,20 @@ export default function RollingGallery({ projects }: RollingGalleryProps) {
 
       {/* Decorative Bottom Line */}
       <div className="absolute bottom-20 left-0 w-full h-px bg-white/5 px-12" />
+
+      {/* View More Button */}
+      <div className="mt-20 flex justify-center px-6">
+        <Link
+          href="/projects"
+          className={cn(
+            "group relative px-12 py-5 bg-transparent border border-accent/30 text-accent font-sans text-xs uppercase tracking-[0.3em] font-bold overflow-hidden transition-all duration-500 hover:border-accent hover:text-primary",
+            isRTL && "tracking-normal font-arabic"
+          )}
+        >
+          <span className="relative z-10">{isRTL ? 'عرض جميع المشاريع' : 'View All Projects'}</span>
+          <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+        </Link>
+      </div>
     </section>
   )
 }

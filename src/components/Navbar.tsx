@@ -34,9 +34,10 @@ export default function Navbar({ settings }: NavbarProps) {
   // Navigation now supports both hardcoded fallback and dynamic labels
   const defaultNavLinks: NavLink[] = [
     { labelKey: 'nav.home', href: '/' },
-    { labelKey: 'nav.projects', href: '#projects' },
-    { labelKey: 'nav.services', href: '#services' },
-    { labelKey: 'nav.about', href: '#about' },
+    { labelKey: 'nav.projects', href: '/#projects' },
+    { labelKey: 'nav.services', href: '/#services' },
+    { labelKey: 'nav.about', href: '/#about' },
+    { labelKey: 'nav.contact', href: '/contact' },
   ]
 
   const navLinks = settings?.navigation?.length > 0 
@@ -103,12 +104,7 @@ export default function Navbar({ settings }: NavbarProps) {
           isRTL && "flex-row-reverse"
         )}>
           <LanguageSwitcher />
-          <Link
-            href="#contact"
-            className="bg-accent text-primary px-8 py-2.5 font-sans text-xs uppercase tracking-widest font-bold hover:bg-white transition-all shadow-lg hover:shadow-accent/20"
-          >
-            {t('nav.talk')}
-          </Link>
+         
         </div>
 
         {/* Mobile Toggle */}

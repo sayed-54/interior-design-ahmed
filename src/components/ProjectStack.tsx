@@ -96,8 +96,11 @@ export default function ProjectStack({ images, isRTL }: ProjectStackProps) {
               {/* Stack Indicator */}
               {index === 0 && (
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 z-10 pointer-events-none">
-                  <p className="text-white/60 text-[10px] uppercase tracking-widest font-bold">
-                    Click to rotate stack
+                  <p className={cn(
+                    "text-white/60 text-[10px] uppercase tracking-widest font-bold whitespace-nowrap",
+                    isRTL && "font-arabic tracking-normal"
+                  )}>
+                    {isRTL ? 'اضغط لتدوير الصور' : 'Click to rotate stack'}
                   </p>
                 </div>
               )}
@@ -142,16 +145,20 @@ export default function ProjectStack({ images, isRTL }: ProjectStackProps) {
               {/* Navigation */}
               <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 pointer-events-none">
                 <button
-                  onClick={() => setSelectedIndex((prev) => (prev! === 0 ? images.length - 1 : prev! - 1))}
+                  onClick={() => {
+                    setSelectedIndex((prev) => (prev! === 0 ? images.length - 1 : prev! - 1))
+                  }}
                   className="p-4 bg-white/5 backdrop-blur-lg rounded-full text-white hover:bg-accent hover:text-primary transition-all pointer-events-auto"
                 >
-                  <ChevronLeft size={32} />
+                  {isRTL ? <ChevronRight size={32} /> : <ChevronLeft size={32} />}
                 </button>
                 <button
-                  onClick={() => setSelectedIndex((prev) => (prev! === images.length - 1 ? 0 : prev! + 1))}
+                  onClick={() => {
+                    setSelectedIndex((prev) => (prev! === images.length - 1 ? 0 : prev! + 1))
+                  }}
                   className="p-4 bg-white/5 backdrop-blur-lg rounded-full text-white hover:bg-accent hover:text-primary transition-all pointer-events-auto"
                 >
-                  <ChevronRight size={32} />
+                  {isRTL ? <ChevronLeft size={32} /> : <ChevronRight size={32} />}
                 </button>
               </div>
 
