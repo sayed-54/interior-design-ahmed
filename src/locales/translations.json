@@ -1,0 +1,102 @@
+{
+    "en": {
+        "nav": {
+            "home": "Home",
+            "projects": "Projects",
+            "services": "Services",
+            "about": "About",
+            "contact": "Contact",
+            "talk": "Let's Talk"
+        },
+        "hero": {
+            "discover": "Discover More",
+            "headline": "Architectural Excellence",
+            "subheadline": "A curated approach to luxury interior design",
+            "button": "View Projects"
+        },
+        "about": {
+            "since": "Established",
+            "philosophy": "Our Philosophy",
+            "architecture_quote": "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
+        },
+        "projects": {
+            "title": "Featured Projects"
+        },
+        "services": {
+            "conceptual": {
+                "title": "Conceptual Design",
+                "desc": "Transforming ideas into coherent visual narratives."
+            },
+            "planning": {
+                "title": "Spatial Planning",
+                "desc": "Optimizing flows and functionality in architecture."
+            },
+            "materials": {
+                "title": "Material Selection",
+                "desc": "Sourcing the finest materials and finishes."
+            }
+        },
+        "cta": {
+            "title": "Ready to transform your sanctuary?",
+            "button": "Start Your Project"
+        },
+        "footer": {
+            "connect": "Let's Connect",
+            "quickLinks": "Quick Links",
+            "services": "Services",
+            "copyright": "All rights reserved",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        }
+    },
+    "ar": {
+        "nav": {
+            "home": "الرئيسية",
+            "projects": "المشاريع",
+            "services": "الخدمات",
+            "about": "من نحن",
+            "contact": "اتصل بنا",
+            "talk": "تحدث معنا"
+        },
+        "hero": {
+            "discover": "اكتشف المزيد",
+            "headline": "التميز المعماري",
+            "subheadline": "نهج مدروس لتصميم داخلي فاخر",
+            "button": "عرض المشاريع"
+        },
+        "about": {
+            "since": "تأسست في عام",
+            "philosophy": "فلسفتنا",
+            "architecture_quote": "العمارة هي اللعبة المتقنة والصحيحة والرائعة للكتل المجتمعة تحت الضوء."
+        },
+        "projects": {
+            "title": "مشاريع مميزة"
+        },
+        "services": {
+            "conceptual": {
+                "title": "التصميم المفاهيمي",
+                "desc": "تحويل الأفكار إلى روايات بصرية متماسكة."
+            },
+            "planning": {
+                "title": "التخطيط المكاني",
+                "desc": "تحسين التدفقات والوظائف في العمارة."
+            },
+            "materials": {
+                "title": "اختيار المواد",
+                "desc": "الحصول على أرقى المواد والتشطيبات."
+            }
+        },
+        "cta": {
+            "title": "هل أنت مستعد لتحويل ملاذك؟",
+            "button": "ابدأ مشروعك"
+        },
+        "footer": {
+            "connect": "لنتواصل",
+            "quickLinks": "روابط سريعة",
+            "services": "الخدمات",
+            "copyright": "جميع الحقوق محفوظة",
+            "privacy": "سياسة الخصوصية",
+            "terms": "شروط الخدمة"
+        }
+    }
+}
