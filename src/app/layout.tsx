@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import GrainOverlay from "@/components/GrainOverlay";
 import DynamicTitleHandler from "@/components/DynamicTitleHandler";
 import { getLocalizedValue } from "@/utils/i18n";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   variable: "--font-sans",
@@ -111,6 +112,7 @@ export default async function RootLayout({
           <DynamicTitleHandler siteTitle={settings?.siteTitle} />
           <GrainOverlay />
           {children}
+          <Analytics />
         </LanguageProvider>
       </body>
     </html>
