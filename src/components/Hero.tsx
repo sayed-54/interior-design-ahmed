@@ -92,18 +92,26 @@ export default function Hero({ hero, settings }: HeroProps) {
           className="flex flex-col items-center"
         >
           <h1 className={cn(
-            "text-6xl md:text-8xl lg:text-9xl text-accent font-light tracking-[-0.02em] leading-[1.05] mb-8 flex flex-wrap justify-center overflow-hidden",
+            "text-3xl md:text-6xl lg:text-7xl text-accent font-light tracking-[-0.02em] leading-[1.05] mb-8 flex flex-wrap justify-center text-center",
             isArabic && "font-serif"
           )}>
             {isArabic ? (
               words.map((word, index) => (
-                <motion.span variants={child as any} key={index} className="mx-[0.15em] inline-block">
+                <motion.span 
+                  variants={child as any} 
+                  key={index} 
+                  className="mx-[0.15em] inline-block"
+                >
                   {word}
                 </motion.span>
               ))
             ) : (
-              Array.from(headline).map((letter, index) => (
-                <motion.span variants={child as any} key={index}>
+              headline.split("").map((letter, index) => (
+                <motion.span 
+                  variants={child as any} 
+                  key={index}
+                  className="inline-block"
+                >
                   {letter === " " ? "\u00A0" : letter}
                 </motion.span>
               ))
