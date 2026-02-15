@@ -86,6 +86,7 @@ export default function Hero({ hero, settings }: HeroProps) {
       {/* Cinematic Content */}
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
+          key={language}
           variants={container}
           initial="hidden"
           animate="visible"
