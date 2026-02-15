@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { getLocalizedValue } from '@/utils/i18n'
 import { cn } from '@/lib/utils'
@@ -11,6 +12,17 @@ interface AboutSectionProps {
 
 export default function AboutSection({ about }: AboutSectionProps) {
   const { t, language, isRTL } = useLanguage()
+  const imageRef = useRef<HTMLDivElement>(null)
+
+  // Scroll-driven color reveal for the about image
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start end", "center center"]
+  })
+
+  const grayscaleBase = useTransform(scrollYProgress, [0, 1], [1, 0])
+  const grayscale = useSpring(grayscaleBase, { stiffness: 80, damping: 25 })
+  const filterValue = useTransform(grayscale, (v: number) => `grayscale(${v})`)
 
   const revealVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -76,7 +88,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
             </motion.div>
           </motion.div>
 
-          {/* Right: Large Asymmetric Image */}
+          {/* Right: Large Asymmetric Image with Scroll Color Reveal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -84,14 +96,15 @@ export default function AboutSection({ about }: AboutSectionProps) {
             transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] as any }}
             className="relative"
           >
-             <div className="aspect-3/4 overflow-hidden rounded-3xl shadow-2xl relative group">
+             <div ref={imageRef} className="aspect-3/4 overflow-hidden rounded-3xl shadow-2xl relative group">
               <motion.img
                 initial={{ scale: 1.2 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 1.5 }}
                 src={about?.image || 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200'}
                 alt="Architect"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                style={{ filter: filterValue }}
+                className="w-full h-full object-cover transition-all duration-1000"
               />
             </div>
             {/* Accent Shadow Box */}
