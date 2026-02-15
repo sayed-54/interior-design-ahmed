@@ -96,23 +96,25 @@ export default function Hero({ hero, settings }: HeroProps) {
             isArabic && "font-serif"
           )}>
             {isArabic ? (
+              // Arabic word-by-word reveal
               words.map((word, index) => (
                 <motion.span 
+                  key={index}
                   variants={child as any} 
-                  key={index} 
                   className="mx-[0.15em] inline-block"
                 >
                   {word}
                 </motion.span>
               ))
             ) : (
-              headline.split("").map((letter, index) => (
+              // English letter-by-letter reveal
+              Array.from(headline).map((char, index) => (
                 <motion.span 
-                  variants={child as any} 
                   key={index}
+                  variants={child as any} 
                   className="inline-block"
                 >
-                  {letter === " " ? "\u00A0" : letter}
+                  {char === " " ? "\u00A0" : char}
                 </motion.span>
               ))
             )}
