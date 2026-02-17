@@ -93,6 +93,7 @@ export async function getProjectBySlug(slug: string) {
       "slug": slug.current,
       "coverImage": coverImage.asset->url,
       "gallery": galleryImages[].asset->url,
+      "videoUrl": videoFile.asset->url,
       description
     }`,
     { slug }

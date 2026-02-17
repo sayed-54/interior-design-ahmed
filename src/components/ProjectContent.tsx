@@ -5,6 +5,9 @@ import { useLanguage } from '@/context/LanguageContext'
 import { getLocalizedValue } from '@/utils/i18n'
 import { cn } from '@/lib/utils'
 import ProjectStack from './ProjectStack'
+import { useState } from 'react'
+import { Play } from 'lucide-react'
+import VideoModal from './VideoModal'
 
 interface ProjectContentProps {
   project: any
@@ -12,6 +15,7 @@ interface ProjectContentProps {
 
 export default function ProjectContent({ project }: ProjectContentProps) {
   const { language, isRTL } = useLanguage()
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
   
   const projectImages = Array.from(new Set([project.coverImage, ...(project.gallery || [])]))
 
@@ -62,20 +66,48 @@ export default function ProjectContent({ project }: ProjectContentProps) {
 
         {/* Action Button */}
         <div className={cn(
-          "pt-8 flex",
+          "pt-8 flex flex-wrap gap-4",
           isRTL ? "justify-start" : "justify-start"
         )}>
           <Link 
             href="/contact"
             className={cn(
-              "bg-accent text-primary px-12 py-5 font-sans text-xs uppercase tracking-widest font-bold hover:bg-white transition-all shadow-xl shadow-accent/10 whitespace-nowrap inline-block",
+              "bg-accent text-primary px-8 py-4 items-center justify-center text-center font-sans text-sm uppercase tracking-widest font-bold hover:bg-white transition-all shadow-xl shadow-accent/10 whitespace-nowrap inline-flex",
               language === 'ar' && "font-arabic tracking-normal"
             )}
           >
             {language === 'ar' ? 'تواصل معنا' : 'Contact Us'}
           </Link>
+
+          {project.videoUrl && (
+            <button
+              onClick={() => setIsVideoOpen(true)}
+              className={cn(
+                "group flex items-center gap-3 px-8 py-4 border border-white/20 hover:border-accent hover:bg-accent/10 transition-all text-white",
+                language === 'ar' && "flex-row-reverse font-arabic"
+              )}
+            >
+              <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent text-accent group-hover:text-primary transition-all">
+                <Play className="w-3 h-3 fill-current ml-0.5" />
+              </div>
+              <span className={cn(
+                "uppercase tracking-widest text-xs font-bold",
+                language === 'ar' && "tracking-normal"
+              )}>
+                {language === 'ar' ? 'شاهد الفيديو' : 'Watch Video'}
+              </span>
+            </button>
+          )}
         </div>
       </div>
+
+      {project.videoUrl && (
+        <VideoModal 
+          isOpen={isVideoOpen} 
+          onClose={() => setIsVideoOpen(false)} 
+          videoUrl={project.videoUrl} 
+        />
+      )}
 
       {/* Interactive Stack Gallery */}
       <div className="relative">

@@ -42,6 +42,14 @@ export default defineType({
       title: 'Description',
       type: 'localizedText',
     }),
+    defineField({
+      name: 'videoFile',
+      title: 'Project Video',
+      type: 'file',
+      options: {
+        accept: 'video/mp4,video/x-m4v,video/*,.mkv'
+      },
+    }),
   ],
   preview: {
     select: {
