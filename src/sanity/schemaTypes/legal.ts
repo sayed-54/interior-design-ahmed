@@ -2,7 +2,7 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
   name: 'legal',
-  title: 'Legal Pages',
+  title: 'Legal Pages (الصفحات القانونية)',
   type: 'document',
   fields: [
     defineField({

@@ -2,7 +2,7 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
   name: 'footer',
-  title: 'Footer',
+  title: 'Footer (تذييل الموقع)',
   type: 'document',
   fields: [
     defineField({

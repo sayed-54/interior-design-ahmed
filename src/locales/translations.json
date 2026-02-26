@@ -5,6 +5,7 @@
             "projects": "Projects",
             "services": "Services",
             "about": "About",
+            "packages": "Packages",
             "contact": "Contact"
         },
         "hero": {
@@ -72,6 +73,19 @@
             "success": "Booking request sent! We'll reach out soon.",
             "selectCategory": "Select a category"
         },
+        "packagesPage": {
+            "heroTitle": "Our Packages",
+            "heroSubtitle": "Curated architectural solutions tailored to your unique vision.",
+            "reserveNow": "Reserve Now",
+            "features": "Features",
+            "modalTitle": "Package Reservation",
+            "modalSubtitle": "Please fill out your details to reserve this package.",
+            "city": "City",
+            "selectedPackage": "Selected Package",
+            "sending": "Submitting...",
+            "success": "Reservation successful!",
+            "error": "Failed to submit reservation"
+        },
         "privacyPolicy": {
             "title": "Privacy Policy",
             "lastUpdated": "Last Updated: February 2026",
@@ -115,6 +129,7 @@
             "projects": "المشاريع",
             "services": "الخدمات",
             "about": "عنا",
+            "packages": "الباقات",
             "contact": "تواصل معنا"
         },
         "hero": {
@@ -168,6 +183,19 @@
             "submit": "احجز استشارة",
             "success": "تم إرسال طلب الحجز! سنتواصل معك قريباً.",
             "selectCategory": "اختر فئة"
+        },
+        "packagesPage": {
+            "heroTitle": "باقاتنا",
+            "heroSubtitle": "حلول معمارية منتقاة مصممة خصيصًا لتناسب رؤيتك الفريدة.",
+            "reserveNow": "احجز الآن",
+            "features": "المميزات",
+            "modalTitle": "حجز الباقة",
+            "modalSubtitle": "يرجى ملء بياناتك لحجز هذه الباقة.",
+            "city": "المدينة",
+            "selectedPackage": "الباقة المختارة",
+            "sending": "جاري الإرسال...",
+            "success": "تم الحجز بنجاح!",
+            "error": "فشل إرسال الحجز"
         },
         "privacyPolicy": {
             "title": "سياسة الخصوصية",

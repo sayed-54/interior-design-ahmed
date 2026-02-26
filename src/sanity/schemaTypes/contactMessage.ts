@@ -2,7 +2,7 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
   name: 'contactMessage',
-  title: 'Contact Message',
+  title: 'Contact Messages (رسائل التواصل)',
   type: 'document',
   fields: [
     defineField({
@@ -33,6 +33,12 @@ export default defineType({
       title: 'Read by Admin',
       type: 'boolean',
       description: 'Check when this message has been read',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'isViewed',
+      title: 'تمت المراجعة',
+      type: 'boolean',
       initialValue: false,
     }),
     defineField({

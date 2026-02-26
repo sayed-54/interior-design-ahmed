@@ -10,7 +10,9 @@ import reservation from './reservation'
 import legal from './legal'
 import { localizedString } from './localizedString'
 import { localizedText } from './localizedText'
+import packageSchema from './package'
+import packageReservation from './packageReservation'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [settings, hero, project, service, about, footer, contactMessage, reservation, legal, localizedString, localizedText],
+  types: [settings, hero, project, service, about, footer, contactMessage, reservation, legal, packageSchema, packageReservation, localizedString, localizedText],
 }

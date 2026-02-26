@@ -2,7 +2,7 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
   name: 'settings',
-  title: 'Settings',
+  title: 'Settings (الإعدادات)',
   type: 'document',
   fields: [
     defineField({
@@ -15,6 +15,89 @@ export default defineType({
       title: 'Logo',
       type: 'image',
     }),
+    
+    // --- New Info Fields ---
+    defineField({
+      name: 'companyNameEn',
+      type: 'string',
+      title: 'Company Name (English)',
+    }),
+    defineField({
+      name: 'companyNameAr',
+      type: 'string',
+      title: 'اسم الشركة (Arabic)',
+    }),
+    defineField({
+      name: 'addressEn',
+      type: 'string',
+      title: 'Address (English)',
+    }),
+    defineField({
+      name: 'addressAr',
+      type: 'string',
+      title: 'العنوان (Arabic)',
+    }),
+    defineField({
+      name: 'phone',
+      type: 'string',
+      title: 'Phone (رقم الهاتف)',
+    }),
+    defineField({
+      name: 'email',
+      type: 'string',
+      title: 'Email (البريد الإلكتروني)',
+    }),
+    defineField({
+      name: 'whatsapp',
+      type: 'string',
+      title: 'WhatsApp Number (رقم الواتساب)',
+      description: 'Enter number in international format, e.g. 201001234567. Do not include + or spaces.',
+    }),
+
+    // --- Social Links ---
+    defineField({
+      name: 'socialLinks',
+      title: 'Social Media Links (روابط السوشيال ميديا)',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'platform',
+              title: 'Platform',
+              type: 'string',
+              options: {
+                list: [
+                  { title: "Facebook", value: "facebook" },
+                  { title: "Instagram", value: "instagram" },
+                  { title: "LinkedIn", value: "linkedin" },
+                  { title: "Twitter / X", value: "twitter" },
+                  { title: "YouTube", value: "youtube" },
+                  { title: "TikTok", value: "tiktok" },
+                  { title: "Pinterest", value: "pinterest" },
+                  { title: "Snapchat", value: "snapchat" },
+                  { title: "Behance", value: "behance" },
+                  { title: "Dribbble", value: "dribbble" },
+                ],
+              },
+            },
+            {
+              name: 'url',
+              title: 'Profile Link (رابط الحساب)',
+              type: 'url',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'platform',
+              subtitle: 'url',
+            },
+          },
+        },
+      ],
+    }),
+
     defineField({
       name: 'navigation',
       title: 'Navigation Links',

@@ -6,6 +6,14 @@ export async function getSettings() {
     groq`*[_type == "settings"][0]{
       siteTitle,
       logo,
+      companyNameEn,
+      companyNameAr,
+      addressEn,
+      addressAr,
+      phone,
+      email,
+      whatsapp,
+      socialLinks,
       primaryColor,
       secondaryColor,
       accentColor,
@@ -107,4 +115,19 @@ export async function getProjectCategories() {
 
 export async function getLegalData() {
   return client.fetch(groq`*[_type == "legal"][0]`)
+}
+
+export async function getPackages() {
+  return client.fetch(
+    groq`*[_type == "package"] | order(_createdAt asc){
+      _id,
+      titleEn,
+      titleAr,
+      "slug": slug.current,
+      "image": image.asset->url,
+      shortDescriptionEn,
+      shortDescriptionAr,
+      features
+    }`
+  )
 }

@@ -6,6 +6,7 @@ import { baseUrl } from "@/sanity/env";
 import { LanguageProvider } from "@/context/LanguageContext";
 import GrainOverlay from "@/components/GrainOverlay";
 import DynamicTitleHandler from "@/components/DynamicTitleHandler";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { getLocalizedValue } from "@/utils/i18n";
 import { Analytics } from "@vercel/analytics/react"
 
@@ -112,6 +113,7 @@ export default async function RootLayout({
           <DynamicTitleHandler siteTitle={settings?.siteTitle} />
           <GrainOverlay />
           {children}
+          <FloatingWhatsApp whatsappNumber={settings?.whatsapp} />
           <Analytics />
         </LanguageProvider>
       </body>

@@ -37,6 +37,7 @@ export default function Navbar({ settings }: NavbarProps) {
     { labelKey: 'nav.projects', href: '/#projects' },
     { labelKey: 'nav.services', href: '/#services' },
     { labelKey: 'nav.about', href: '/#about' },
+    { labelKey: 'nav.packages', href: '/packages' },
     { labelKey: 'nav.contact', href: '/contact' },
   ]
 

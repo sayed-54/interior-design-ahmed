@@ -3,12 +3,14 @@ import {
   getHero, 
   getProjects, 
   getServices, 
-  getAbout, 
+  getAbout,
+  getPackages,
 } from "@/sanity/queries";
 import Hero from "@/components/Hero";
 import RollingGallery from "@/components/RollingGallery";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
+import PackagesSection from "@/components/PackagesSection";
 import CTASection from "@/components/CTASection";
 
 export default async function Home() {
@@ -18,12 +20,14 @@ export default async function Home() {
     projects,
     services,
     about,
+    packages,
   ] = await Promise.all([
     getSettings(),
     getHero(),
     getProjects(),
     getServices(),
     getAbout(),
+    getPackages(),
   ]);
 
   return (
@@ -35,6 +39,8 @@ export default async function Home() {
       <RollingGallery projects={projects || []} />
 
       <ServicesSection services={services || []} />
+
+      <PackagesSection packages={packages || []} />
 
       <CTASection />
     </main>
