@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
+import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import { cn } from '@/lib/utils'
 
@@ -11,8 +12,10 @@ interface FloatingWhatsAppProps {
 
 export default function FloatingWhatsApp({ whatsappNumber }: FloatingWhatsAppProps) {
   const { isRTL, language } = useLanguage()
+  const pathname = usePathname()
 
-  if (!whatsappNumber) return null
+  // Hide in Sanity Studio and if no number
+  if (!whatsappNumber || pathname?.startsWith('/studio')) return null
 
   // Ensure default message is URL encoded
   const defaultMessage = language === 'ar' 

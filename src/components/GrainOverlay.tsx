@@ -1,6 +1,9 @@
-'use client'
+import { usePathname } from 'next/navigation'
 
 export default function GrainOverlay() {
+  const pathname = usePathname()
+  
+  if (pathname?.startsWith('/studio')) return null
   return (
     <div 
       className="pointer-events-none fixed inset-0 z-1 opacity-[0.03] mix-blend-overlay"
