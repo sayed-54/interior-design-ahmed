@@ -74,7 +74,7 @@ export default function Navbar({ settings }: NavbarProps) {
             isRTL && "ms-0"
           )}
         >
-          {getLocalizedValue(settings?.siteTitle, language) || 'Ahmed Samy'}
+          {getLocalizedValue(settings?.siteTitle, language) || 'Lumière Studio'}
         </Link>
 
         {/* Desktop Links Container */}

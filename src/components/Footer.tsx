@@ -52,7 +52,7 @@ export default function Footer({ footer, settings }: FooterProps) {
   const addressEn = settings?.addressEn || "Riyadh | London | Milan"
   const addressAr = settings?.addressAr || "الرياض | لندن | ميلانو"
   
-  const whatsappNumber = settings?.whatsapp
+  const whatsappNumber = '201018102365'
 
   return (
     <footer id="contact" className="relative bg-[#1A1816] text-white pt-40 pb-12 overflow-hidden border-t border-accent/10">
@@ -172,18 +172,16 @@ export default function Footer({ footer, settings }: FooterProps) {
                  )
               })}
 
-              {/* Explicit WhatsApp Icon from the phone number entered */}
-              {whatsappNumber && (
-                 <a 
-                   href={`https://wa.me/${whatsappNumber}`} 
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/5 text-[#25D366]/80 hover:bg-[#25D366]/20 hover:text-[#25D366] hover:border-[#25D366]/40 transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_20px_rgba(37,211,102,0.2)]"
-                   aria-label="WhatsApp"
-                 >
-                   <FaWhatsapp size={20} />
-                 </a>
-              )}
+              {/* WhatsApp Icon - hardcoded number */}
+              <a 
+                 href={`https://wa.me/${whatsappNumber}`} 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/5 text-[#25D366]/80 hover:bg-[#25D366]/20 hover:text-[#25D366] hover:border-[#25D366]/40 transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_20px_rgba(37,211,102,0.2)]"
+                 aria-label="WhatsApp"
+              >
+                 <FaWhatsapp size={20} />
+              </a>
             </div>
           </div>
         </motion.div>

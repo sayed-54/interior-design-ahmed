@@ -22,9 +22,9 @@ const playfair = Playfair_Display({
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
-  const title = getLocalizedValue(settings?.siteTitle, 'en') || "Ahmed Samy Interior Design";
-  const description = getLocalizedValue(settings?.seoDescription, 'en') || "Ahmed Samy Interior Design - Premium Architectural & Luxury Interior Design Studio. Transforming spaces into immersive environments.";
-  const keywords = settings?.seoKeywords || "Interior Design, Architecture, Luxury Design, Ahmed Samy, Modern Interior, تصميم داخلي, عمارة, دهانات, تشطيبات, ديكور داخلي, تصميم مودرن, مهندس ديكور";
+  const title = getLocalizedValue(settings?.siteTitle, 'en') || "Lumière Studio";
+  const description = getLocalizedValue(settings?.seoDescription, 'en') || "Lumière Studio - Premium Architectural & Luxury Interior Design Studio. Transforming spaces into immersive environments.";
+  const keywords = settings?.seoKeywords || "Interior Design, Architecture, Luxury Design, Lumière Studio, Modern Interior, تصميم داخلي, عمارة, دهانات, تشطيبات, ديكور داخلي, تصميم مودرن, مهندس ديكور";
   const ogImageUrl = settings?.ogImage || '/og-image.jpg';
   
   return {
@@ -34,9 +34,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description,
     keywords: keywords.split(',').map((k: string) => k.trim()),
-    authors: [{ name: "Ahmed Samy" }],
-    creator: "Ahmed Samy",
-    publisher: "Ahmed Samy Interior Designer",
+    authors: [{ name: "Lumière Studio" }],
+    creator: "Lumière Studio",
+    publisher: "Lumière Studio",
     formatDetection: {
       email: false,
       address: false,
@@ -80,7 +80,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title,
       description,
-      creator: '@ahmedsamy',
+      creator: '@lumierestudio',
       images: [ogImageUrl],
     },
   };
@@ -113,7 +113,7 @@ export default async function RootLayout({
           <DynamicTitleHandler siteTitle={settings?.siteTitle} />
           <GrainOverlay />
           {children}
-          <FloatingWhatsApp whatsappNumber={settings?.whatsapp} />
+          <FloatingWhatsApp />
           <Analytics />
         </LanguageProvider>
       </body>

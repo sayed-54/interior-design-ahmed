@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!project) return { title: 'Project Not Found' }
   
-  const siteName = getLocalizedValue(settings?.siteTitle, 'en') || 'Ahmed Samy'
+  const siteName = getLocalizedValue(settings?.siteTitle, 'en') || 'Lumière Studio'
   const postTitle = getLocalizedValue(project.title, 'en')
   
   return {

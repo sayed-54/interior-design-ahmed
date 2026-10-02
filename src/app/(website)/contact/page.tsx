@@ -4,7 +4,7 @@ import ContactHeader from '@/components/ContactHeader'
 import DynamicTitleHandler from '@/components/DynamicTitleHandler'
 
 export const metadata = {
-  title: 'Contact | Ahmed Samy Interior Design',
+  title: 'Contact | Lumière Studio',
   description: 'Let us collaborate on your next architectural narrative and interior design masterpiece.',
 }
 

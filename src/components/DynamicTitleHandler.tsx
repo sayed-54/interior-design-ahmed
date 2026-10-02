@@ -13,7 +13,7 @@ export default function DynamicTitleHandler({ siteTitle, pageName }: DynamicTitl
   const { language } = useLanguage()
 
   useEffect(() => {
-    const baseTitle = getLocalizedValue(siteTitle, language) || 'Ahmed Samy'
+    const baseTitle = getLocalizedValue(siteTitle, language) || 'Lumière Studio'
     
     if (pageName) {
       const currentPage = getLocalizedValue(pageName, language)

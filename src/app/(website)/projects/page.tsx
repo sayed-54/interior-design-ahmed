@@ -3,7 +3,7 @@ import ProjectsGrid from '@/components/ProjectsGrid'
 import DynamicTitleHandler from '@/components/DynamicTitleHandler'
 
 export const metadata = {
-  title: 'Projects | Ahmed Samy Interior Design',
+  title: 'Projects | Lumière Studio',
   description: 'Explore our latest architectural narratives and interior design masterpieces.',
 }
 

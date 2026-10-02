@@ -6,23 +6,21 @@ import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import { cn } from '@/lib/utils'
 
-interface FloatingWhatsAppProps {
-  whatsappNumber?: string
-}
+const WHATSAPP_NUMBER = '201018102365'
 
-export default function FloatingWhatsApp({ whatsappNumber }: FloatingWhatsAppProps) {
+export default function FloatingWhatsApp() {
   const { isRTL, language } = useLanguage()
   const pathname = usePathname()
 
-  // Hide in Sanity Studio and if no number
-  if (!whatsappNumber || pathname?.startsWith('/studio')) return null
+  // Hide in Sanity Studio
+  if (pathname?.startsWith('/studio')) return null
 
   // Ensure default message is URL encoded
   const defaultMessage = language === 'ar' 
     ? encodeURIComponent('مرحباً، أود الاستفسار عن خدمات التصميم الداخلي.')
     : encodeURIComponent('Hello, I would like to inquire about your interior design services.')
 
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${defaultMessage}`
 
   return (
     <motion.a

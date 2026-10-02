@@ -3,7 +3,7 @@ import PackagesClient from '@/components/PackagesClient'
 import DynamicTitleHandler from '@/components/DynamicTitleHandler'
 
 export const metadata = {
-  title: 'Packages | Ahmed Samy Interior Design',
+  title: 'Packages | Lumière Studio',
   description: 'Explore our curated architectural solutions and interior design packages.',
 }
 

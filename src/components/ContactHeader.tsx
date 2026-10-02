@@ -79,20 +79,18 @@ export default function ContactHeader({ settings }: ContactHeaderProps) {
              </a>
           </div>
 
-           {/* WhatsApp (Optional Direct Link) */}
-           {settings?.whatsapp && (
-             <div className="flex flex-col gap-2 group mt-8">
-              <a 
-                href={`https://wa.me/${settings.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300 font-bold tracking-wider text-xs uppercase"
-              >
-                <FaWhatsapp size={20} />
-                {language === 'ar' ? 'مراسلة عبر واتساب' : 'Chat on WhatsApp'}
-              </a>
-             </div>
-           )}
+           {/* WhatsApp - hardcoded number */}
+           <div className="flex flex-col gap-2 group mt-8">
+             <a 
+               href="https://wa.me/201018102365"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300 font-bold tracking-wider text-xs uppercase"
+             >
+               <FaWhatsapp size={20} />
+               {language === 'ar' ? 'مراسلة عبر واتساب' : 'Chat on WhatsApp'}
+             </a>
+            </div>
         </div>
       </motion.div>
     </div>
